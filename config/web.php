@@ -49,7 +49,9 @@ $config = [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'rules' => [],
+            'rules' => [
+                '/api/v1/books/<action>/<id:\d+>' => '/api/v1/books/<action>',
+            ],
         ]
     ],
     'modules' => [
