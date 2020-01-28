@@ -32,6 +32,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $provider = Yii::$app->getModule('library')->getResourceFactory()->loadBooks();
+        return $this->render('index', ['dataProvider' => $provider]);
     }
 }
